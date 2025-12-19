@@ -4,13 +4,12 @@ const {Server} = require('socket.io');
 const express = require('express');
 const {join} = require('path');
 const app = express();
-// port = process.env.PORT || 4000;
+port = process.env.PORT || 4000;
 //
 app.use(express.static(__dirname + '/public/browser'));
 app.get('*angular', (req, res) => {
     res.sendFile(join(__dirname, 'public', 'browser', 'index.html'));
 });
-// app.listen(port);
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -94,6 +93,6 @@ io.on('connection', (socket) => {
     });
 });
 
-httpServer.listen(3000, () => {
+httpServer.listen(port, () => {
     console.log('server running at http://localhost:3000');
 });
