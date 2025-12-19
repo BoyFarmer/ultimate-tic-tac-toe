@@ -1,0 +1,42 @@
+@if (needToFillUserName()) {
+  <app-player-name/>
+} @else {
+  @let waitingState = this.waitingState();
+  @if (waitingState === 'opponent') {
+    <app-waiting/>
+  } @else {
+    <div class="game-wrapper">
+
+      <div class="players">
+        <div class="you">
+          <div>You: {{ user() }}</div>
+          <div>Playing {{ playingAs() }}</div>
+        </div>
+        <div class="opponent">
+          <div>Opponent: {{ opponentName() }}</div>
+          <div>Playing {{ playingAs() === 'circle' ? 'cross' : 'circle' }}</div>
+        </div>
+      </div>
+      <div class="game-state">
+        @if(waitingState === 'move') {
+          Waiting for opponent move
+          <mat-progress-bar mode="indeterminate"/>
+        } @else {
+          Your move
+        }
+      </div>
+
+      <div class="game">
+        <app-tic-tac-toe boardId="0"/>
+        <app-tic-tac-toe boardId="1"/>
+        <app-tic-tac-toe boardId="2"/>
+        <app-tic-tac-toe boardId="3"/>
+        <app-tic-tac-toe boardId="4"/>
+        <app-tic-tac-toe boardId="5"/>
+        <app-tic-tac-toe boardId="6"/>
+        <app-tic-tac-toe boardId="7"/>
+        <app-tic-tac-toe boardId="8"/>
+      </div>
+    </div>
+  }
+}

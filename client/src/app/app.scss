@@ -1,0 +1,38 @@
+.game-wrapper {
+  width: 500px;
+  margin: auto;
+}
+
+.game {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+}
+
+.players {
+  padding-top: 32px;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .opponent {
+    text-align: end;
+  }
+}
+.game-state {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--mat-sys-secondary-container);
+  margin-bottom: 16px;
+  border-radius: 28px;
+  font: var(--mat-sys-title-medium);
+  letter-spacing: var(--mat-sys-title-medium-tracking);
+  text-align: center;
+  position: relative;
+  mat-progress-bar {
+    bottom: 0;
+    position: absolute;
+  }
+  overflow: hidden;
+}

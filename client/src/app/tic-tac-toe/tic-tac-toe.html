@@ -1,0 +1,3 @@
+@for(cellId of cells(); track cellId.id) {
+  <div (click)="click(cellId.id)" [class]="cellId.shape" [class.last-move]="lastOpponentMoveBox() === cellId.id"></div>
+}

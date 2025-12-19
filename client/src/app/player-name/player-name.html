@@ -1,0 +1,8 @@
+<span>Just give us your name:</span>
+<form (ngSubmit)="submit(name.value)">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput #name/>
+  </mat-form-field>
+  <button mat-stroked-button>Play!</button>
+</form>

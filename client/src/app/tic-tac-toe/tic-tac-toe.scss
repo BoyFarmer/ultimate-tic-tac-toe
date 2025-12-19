@@ -1,0 +1,56 @@
+:host {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  & > div {
+    aspect-ratio: 1 / 1;
+    border: solid 1px var(--mat-sys-surface-container-highest);
+    background-color: var(--mat-sys-surface-container-lowest);
+
+    &.last-move {
+      //border-color: var(--mat-sys-error);
+      background-color: var(--mat-sys-error-container);
+    }
+    &.circle {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 60%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        border: solid 4px var(--mat-sys-primary);
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    &.cross {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 4px;
+        background-color: var(--mat-sys-tertiary);
+        border-radius: 2px;
+        aspect-ratio: 1 / 1;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 4px;
+        background-color: var(--mat-sys-tertiary);
+        border-radius: 2px;
+        aspect-ratio: 1 / 1;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+}
