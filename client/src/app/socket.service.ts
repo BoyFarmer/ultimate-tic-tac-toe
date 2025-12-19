@@ -9,7 +9,7 @@ export class SocketService {
   private socket: Socket;
 
   constructor() {
-    this.socket = io('http://localhost:3000'); // Connect to Socket.IO server
+    this.socket = io(); // Connect to Socket.IO server
   }
 
   sendMessage(event: SocketMessage, message: Record<string, unknown>): void {
