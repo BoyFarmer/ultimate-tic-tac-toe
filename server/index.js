@@ -97,4 +97,4 @@ httpServer.listen(port, () => {
     console.log('server running at http://localhost:'+ port);
 });
 
-module.exports = app;
+// module.exports = app;
